@@ -1,0 +1,33 @@
+/* Ombre moderne et très visible pour les cards du dashboard */
+.fi-wi-stats-overview-stat {
+    box-shadow:
+        0 8px 32px 0 rgba(93, 95, 239, 0.22),
+        0 1.5px 6px 0 rgba(0,0,0,0.10) !important;
+    border-radius: 24px !important;
+    border: 2px solid #d1d5db !important; /* plus visible */
+    background: #e0e3ef !important; /* blanc plus foncé, très visible */
+    transition: box-shadow 0.2s, border 0.2s;
+}
+
+/* Mode sombre : ombre plus claire et fond plus foncé */
+:root.dark .fi-wi-stats-overview-stat {
+    background: #181a20 !important;
+    box-shadow:
+        0 8px 32px 0 rgba(93, 95, 239, 0.32),
+        0 1.5px 6px 0 rgba(0,0,0,0.25) !important;
+    border: 1.5px solid #23242b !important;
+}
+
+/* Effet au survol pour renforcer l'effet carte */
+.fi-wi-stats-overview-stat:hover {
+    box-shadow:
+        0 16px 48px 0 rgba(93, 95, 239, 0.28),
+        0 3px 12px 0 rgba(0,0,0,0.18) !important;
+    border-color: #5D5FEF !important;
+}
+
+.fi-header, .fi-simple-header, .fi-sidebar, .fi-main-sidebar, .fi-sidebar-header {
+    background: #e0e3ef !important;
+    border-bottom: 2px solid #d1d5db !important;
+    border-right: 2px solid #d1d5db !important;
+} 

@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source "../**/*.blade.php";
+@source "../**/*.js";
+@source "../**/*.vue";
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body, .fi-header, .fi-sidebar, .fi-main-sidebar, .fi-wi-stats-overview-stat {
+    font-family: 'Pacifico', cursive !important;
+}
+
+/* Sidebar Filament - font & style personnalisés */
+.fi-sidebar, .fi-main-sidebar {
+    font-family: 'Inter', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !important;
+    font-size: 1rem;
+    background: #f8f9fa !important;
+    border-right: 2px solid #e5e7eb;
+}
+.fi-sidebar .fi-sidebar-item-label {
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+.fi-sidebar .fi-sidebar-item-button {
+    border-radius: 8px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 2px;
+}
+.fi-sidebar .fi-sidebar-item-active, .fi-sidebar .fi-active {
+    background: #e0e7ff !important;
+    color: #1e40af !important;
+}
+.fi-sidebar .fi-sidebar-item-label {
+    color: #1e293b;
+}
+.fi-sidebar .fi-sidebar-item-button:hover {
+    background: #e5e7eb !important;
+}
+.fi-sidebar .fi-sidebar-item-icon {
+    color: #64748b;
+}
+.fi-sidebar .fi-sidebar-item-active .fi-sidebar-item-icon, .fi-sidebar .fi-active .fi-sidebar-item-icon {
+    color: #1e40af !important;
+}
+
+/* Dark mode */
+.dark .fi-sidebar, .dark .fi-main-sidebar {
+    background: #18181b !important;
+    border-right: 2px solid #27272a;
+}
+.dark .fi-sidebar .fi-sidebar-item-label {
+    color: #f1f5f9;
+}
+.dark .fi-sidebar .fi-sidebar-item-active, .dark .fi-sidebar .fi-active {
+    background: #334155 !important;
+    color: #fbbf24 !important;
+}
+.dark .fi-sidebar .fi-sidebar-item-icon {
+    color: #94a3b8;
+}
+.dark .fi-sidebar .fi-sidebar-item-active .fi-sidebar-item-icon, .dark .fi-sidebar .fi-active .fi-sidebar-item-icon {
+    color: #fbbf24 !important;
+}
+
+/* Logo NexTeco couleur adaptative */
+.fi-logo span {
+    color: #18181b !important;
+}
+.dark .fi-logo span {
+    color: #fff !important;
+}
+
+/* Container principal du dashboard Filament */
+.fi-main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 2rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Grille automatique pour les cards du dashboard */
+.fi-main > div > div.grid, .fi-main .grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+    gap: 2rem !important;
+}
+
+/* Card moderne */
+.fi-wi-stats-overview-stat {
+    background: rgba(30, 32, 40, 0.98) !important; /* dark mode */
+    border-radius: 20px !important;
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.12) !important;
+    padding: 2rem !important;
+    min-width: 0;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: box-shadow 0.2s;
+}
+:root .fi-wi-stats-overview-stat {
+    background: #fff !important; /* light mode */
+}
+.fi-wi-stats-overview-stat:hover {
+    box-shadow: 0 8px 32px 0 rgba(93,95,239,0.12) !important;
+}
+
+/* Titre dashboard */
+.fi-header-heading, .fi-simple-header-heading {
+    font-size: 2.5rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+    font-family: 'Poppins', 'Inter', 'Nunito', Arial, sans-serif !important;
+}
+
+/* Valeur principale */
+.fi-wi-stats-overview-stat-value {
+    font-size: 2.2rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 0.5rem;
+}
+
+/* Label secondaire */
+.fi-wi-stats-overview-stat-label, .fi-wi-stats-overview-stat-description {
+    font-size: 1rem !important;
+    color: #7B91B0 !important;
+    font-weight: 500 !important;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .fi-main {
+        padding: 1rem;
+    }
+    .fi-main > div > div.grid, .fi-main .grid {
+        gap: 1rem !important;
+    }
+    .fi-wi-stats-overview-stat {
+        padding: 1rem !important;
+    }
+}
